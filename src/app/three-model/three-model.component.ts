@@ -76,9 +76,6 @@ export class ThreeModelComponent implements AfterViewInit, OnInit, OnDestroy {
       pointCloud.rotateX(Math.PI/2); 
       this.scene.add(pointCloud);
       this.ranOnce = true;
-      // var enc = new TextEncoder(); // always utf-8
-      // console.log(enc.encode(data.data));
-      // console.log(data);
     });
   }
 
