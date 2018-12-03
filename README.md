@@ -1,27 +1,55 @@
 # RosMarineDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+This project uses the following APIs:
 
-## Development server
++ [Angular](https://angular.io/)
++ [Material](https://material.angular.io/)
++ [Electron](https://electronjs.org/)
++ [OpenMapTiles Map Server](https://openmaptiles.com/server/#install)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Clone this repo and run the following command within the cloned directory:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install
+```
 
-## Build
+# Development Commands:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+To run the development environment of Angular. 
+App can be seen within a browser at https://localhost:4200
+```
+npm run start
+```
 
-## Running unit tests
+Will build the application in an Electron package that is for you current system. App will be placed within the respective folder inside the dist folder.
+```
+npm run dist
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Will build the application in an Electron package for linux. App will be placed within the respective folder inside the dist folder.
+```
+npm run dist-linux
+```
 
-## Running end-to-end tests
+## MapTileServer
+### Install Docker (Ubuntu)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    `$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+    `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs)` stable"
+    `$ sudo apt-get update`
+    `$ sudo apt-get install -y docker-ce`
+    
+### Starting MapTile Server
 
-## Further help
+    `$ sudo service docker start`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This command will start the maptile server. It will also install the application if you haven't already done so (requires internet connection the first time to install application)
+ 
+    `$ docker  run  --rm  -it  -v  $(pwd):/data  -p  8080:80  klokantech/tileserver-gl ./maptiles/oahu.mbtiles`
+
+### Oahu Map Tiles
+
+The Oahu Map Tiles file is located within the maptile folder.
+
+New or different map tiles can be download here: https://openmaptiles.com/downloads/planet/
