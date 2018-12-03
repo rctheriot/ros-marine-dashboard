@@ -1,0 +1,15 @@
+<div #map id="map" style="width: 100%; height: 80%"></div>
+
+<div class="mapButtons">
+  <mat-form-field>
+    <mat-select placeholder="GPS Topics" [(value)]="selected">
+      <mat-option *ngFor="let topic of GPSTopics" [value]="topic">
+        {{ topic.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button class="matButton" color="primary" (click)="changeGPSTopic()">Connect</button>
+  <button *ngIf="lockGPS" mat-raised-button class="matButton" color="warn" (click)="lockUnlockGPS()">Map Lock</button>
+  <button *ngIf="!lockGPS" mat-raised-button class="matButton" color="warn" (click)="lockUnlockGPS()">Map Free</button>
+
+</div>

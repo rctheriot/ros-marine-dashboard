@@ -1,0 +1,9 @@
+.matButton {
+  width: 100% !important;
+  margin-bottom: 5px;
+}
+
+mat-slider {
+  width: 100%;
+  margin: 10px;
+}

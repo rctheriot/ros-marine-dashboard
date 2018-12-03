@@ -1,0 +1,10 @@
+Needs
+Core Sense
+Where we are in our map frame
+
+Useful
+World frame
+
+Will be geenrating location of obstacles in map frame, 
+would be nice to publish from map frame to world frame
+
