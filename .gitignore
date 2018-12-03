@@ -6,6 +6,7 @@
 /dist-server
 /tmp
 /out-tsc
+/ros-dashboard-app
 
 # dependencies
 /node_modules
